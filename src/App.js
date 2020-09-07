@@ -1,24 +1,31 @@
 import React from 'react';
-import logo from './logo.svg';
+import Navitems from './components/nav-items'
+import Imagecard from './components/Imagecard'
+import Searchtext from './components/searchtext'
 import './App.css';
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div className="container">
+      <div className="navbar">
+        <div className="container">
+          <Navitems text="Halk" />
+          <div style={{ borderBottom: "5px solid white", fontSize: "2rem" }}>
+            <Navitems text="Marvel" />
+          </div>
+          <Navitems text="Venom" />
+
+        </div>
+      </div>
+      <div style={{ marginTop: "100px" }}>
+        <Searchtext />
+      </div>
+
+      <div className="arrange">
+        <Imagecard imgsource={process.env.PUBLIC_URL + '/venom-1.jpg'} />
+        <Imagecard imgsource={process.env.PUBLIC_URL + './hulk-1.jpg'} />
+        <Imagecard imgsource={process.env.PUBLIC_URL + 'venom-2.jpg'} />
+      </div>
     </div>
   );
 }
